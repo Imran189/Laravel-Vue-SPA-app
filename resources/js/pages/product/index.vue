@@ -30,7 +30,7 @@
                                     <td>{{product.price}}</td>
                                     <td>
                                         <router-link :to="{name: 'editProduct',params:{id: product.id}}" class="btn btn-primary btn-sm mx-2">Edit</router-link>
-                                        <a href="#" class="btn btn-danger btn-sm">Delete</a>
+                                        <a @click.prevent="deleteProduct(product)" class="btn btn-danger btn-sm">Delete</a>
                                     </td>
                                 </tr>
                             </tbody>
@@ -55,6 +55,14 @@ export default {
             axios.get('/api/product').then(response =>{
                 this.products=response.data;
             });
+        },
+        async deleteProduct(product){
+            axios.delete(`/api/product/${product.id}`).then(()=>{
+                   this.$toast.success(`Product Deleted Successfully`);
+               });
+               let index = this.products.indexOf(product);
+               this.products.splice(index,1);
+
         }
     },
     mounted () {
