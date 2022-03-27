@@ -9,9 +9,12 @@ import Product from "../pages/product/index.vue";
 import ProductCreate from "../pages/product/create.vue";
 import editProduct  from "../pages/product/edit.vue";
 
+//authentication
+import LoginVue from "../pages/auth/Login.vue";
 
 const router = createRouter({
     history:createWebHistory(),
+    linkExactActiveClass: 'active',
     routes:[
         {
             path:'/',
@@ -55,6 +58,14 @@ const router = createRouter({
             name:'editProduct',
             component:editProduct
         },
+
+        {
+            path:'/auth/login',
+            name:'LoginVue',
+            component:LoginVue,
+            
+        },
+
 
         {
             path: '/:pathMatch(.*)*',

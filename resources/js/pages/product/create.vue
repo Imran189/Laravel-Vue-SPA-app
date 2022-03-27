@@ -13,28 +13,33 @@
                                 <form @submit.prevent="createProduct">
                                     <div class="form-group mb-2">
                                         <label for="">Product Title</label>
-                                        <input type="text" v-model="productForm.title" class="form-control" name="title" placeholder="product title" :class="{ 'is-invalid': productForm.errors.has('title') }">
+                                        <input type="text" v-model="productForm.title" class="form-control" name="title" placeholder="product title">
+                                     <div class="text-danger" v-if="productForm.errors.has('title')" v-html="productForm.errors.get('title')" />
                                     </div>
                                     <div class="form-group mb-2">
                                         <label for="">Select Product Category</label>
-                                        <select name="category_id" class="form-control" v-model="productForm.category_id" :class="{ 'is-invalid': productForm.errors.has('category_id') }">
+                                        <select name="category_id" class="form-control" v-model="productForm.category_id" >
                                             <option style="display:none;" value="" selected>Select Category</option>
                                             <option :value="category.id" v-for="category in categories" :key="category.id"> {{ 
                                                 category.name }}</option>
                                         </select>
+                                        
                                     </div>
                                     <div class="form-group mb-2">
                                         <label for="">Product Price</label>
-                                        <input type="text" v-model="productForm.price" class="form-control" name="price" placeholder="product price" :class="{ 'is-invalid': productForm.errors.has('price') }">
+                                        <input type="text" v-model="productForm.price" class="form-control" name="price" placeholder="product price">
+                                         <div class="text-danger" v-if="productForm.errors.has('price')" v-html="productForm.errors.get('price')" />
+                                        
                                     </div>
                                     <div class="form-group mb-2">
                                         <label for="">Product Image</label>
-                                        <input type="file" class="form-control-file"  @change="onImageChange" :class="{ 'is-invalid': productForm.errors.has('image') }">
+                                        <input type="file" class="form-control-file"  @change="onImageChange">
+                                         <div class="text-danger" v-if="productForm.errors.has('image')" v-html="productForm.errors.get('image')" />
                                     </div>
                                     <div class="form-group mb-2">
                                         <label for="">Product Description</label>
-                                        <textarea v-model="productForm.description" class="form-control" name="description" placeholder="product description" :class="{ 'is-invalid': productForm.errors.has('description') }" rows="3"></textarea>
-                                       
+                                        <textarea v-model="productForm.description" class="form-control" name="description" placeholder="product description" rows="3"></textarea>
+                                         <div class="text-danger" v-if="productForm.errors.has('description')" v-html="productForm.errors.get('description')" />
                                     </div>
                                     <div class="form-group mb-2">
                                         <button type="submit" class="btn btn-success">Create Product</button>

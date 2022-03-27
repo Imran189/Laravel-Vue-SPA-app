@@ -14,9 +14,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+Route::get('/{any?}', function () {
     return view('App');
-});
+})->where('any', '[\/\w\.-]*');
 
 Auth::routes();
 
