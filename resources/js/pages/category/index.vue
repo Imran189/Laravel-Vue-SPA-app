@@ -17,7 +17,7 @@
                                    <th style="width:170px">Actions</th>
                                </tr>
                            </thead>
-                           <tbody>
+                           <tbody v-if="categories.length">
                                <tr v-for="category in categories" :key="category.id">
                                    <td style="width:100px">{{category.id}}</td>
                                    <td>{{category.name}}</td>
@@ -29,6 +29,13 @@
                                </tr>
                                
                            </tbody>
+                            <tbody v-else>
+                                <tr>
+                                    <td colspan="4">
+                                        <h5 class="text-center mt-4 mb-4">No products found.</h5>
+                                    </td>
+                                </tr>
+                            </tbody>
                        </table>
                     </div>
                 </div>

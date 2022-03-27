@@ -18,7 +18,7 @@
                                 <th>Actions</th>
                                 </tr>
                             </thead>
-                            <tbody>
+                            <tbody v-if="products.length">
                                 <tr v-for="product in products" :key="product.id">
                                     <td>{{product.id}}</td>
                                     <td>
@@ -31,6 +31,13 @@
                                     <td>
                                         <router-link :to="{name: 'editProduct',params:{id: product.id}}" class="btn btn-primary btn-sm mx-2">Edit</router-link>
                                         <a @click.prevent="deleteProduct(product)" class="btn btn-danger btn-sm">Delete</a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tbody v-else>
+                                <tr>
+                                    <td colspan="5">
+                                        <h5 class="text-center mt-4 mb-4">No products found.</h5>
                                     </td>
                                 </tr>
                             </tbody>
