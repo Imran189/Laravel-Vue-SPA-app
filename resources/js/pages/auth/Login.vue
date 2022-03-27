@@ -7,7 +7,7 @@
                         <h4 class=" text-center">Login page</h4>
                     </div>
                     <div class="card-body">
-                        <form method="post" @click.prevent="login">
+                        <form  @submit.prevent="login">
                             <div class="form-group mb-2">
                                 <label for="">Email</label>
                                 <input type="text" v-model="loginForm.email" class="form-control" placeholder="Email Here">
@@ -37,26 +37,23 @@ export default {
     loginForm: new Form({
                 email: '',
                 password: '',
-                
+ 
             }),          
    }),
 
     methods: {
         login() {
             axios.get('/sanctum/csrf-cookie').then(response => {
-                console.log("hello from login");
-                axios.post('/login',{
-                    email:'user@gmail.com',
-                    password:'password'
-                }).then(response =>{
-                    console.log(response);
-                });
+               this.loginForm.post('/login').then(response=>{
+                    console.log("hello from login");
+               });
+                
             });
             
         },
         getUserData(){
             axios.get('api/user').then(response =>{
-                console.log(response.data);
+                console.log(response);
             });
         }
     },

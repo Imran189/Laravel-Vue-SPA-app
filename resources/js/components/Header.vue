@@ -24,6 +24,9 @@
                 <router-link class="nav-link " aria-current="page" :to="{name:'LoginVue'}">Login</router-link>
                 </li>
                 <li class="nav-item">
+                <a class="nav-link" href="#" @click.prevent="logout">Logout</a>
+                </li>
+                <li class="nav-item">
                 <a class="nav-link" href="#">Link</a>
                 </li>
                 
@@ -37,9 +40,11 @@
 <script>
 export default {
     methods: {
-        FormLink() {
-            
-        }
+       logout(){
+           axios.post('/logout').then(response=>{
+               console.log('success');
+           });
+       }
     },
 }
 </script>
