@@ -5,6 +5,7 @@ import Toaster from "@incuca/vue3-toaster";
 import App from "./components/App.vue";
 import Header from './components/Header.vue';
 import router from './router';
+import store from './store/index.js';
 
 //Vue.component('app-header', require('./components/Header.vue').default);
 
@@ -15,8 +16,8 @@ var toasterConfig={
     dismissible:true,    
 }
 
-createApp(App).use(Toaster,toasterConfig).use(router).mount("#app");
-createApp(Header).use(router).mount("#header");
+createApp(App).use(Toaster,toasterConfig).use(store).use(router).mount("#app");
+createApp(Header).use(Toaster,toasterConfig).use(router).mount("#header");
 
 
  

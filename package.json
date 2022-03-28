@@ -30,6 +30,7 @@
         "object-to-formdata": "^3.0.9",
         "vform": "^2.1.2",
         "vue-router": "^4.0.13",
+        "vuex": "^4.0.2",
         "webpack-cli": "^4.9.2"
     }
 }

@@ -42,7 +42,7 @@ export default {
     methods: {
        logout(){
            axios.post('/logout').then(response=>{
-               console.log('success');
+               this.$toast.success(`Logout Is Successful`);           
            });
        }
     },

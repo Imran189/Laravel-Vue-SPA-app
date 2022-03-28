@@ -35,30 +35,33 @@ import Form from 'vform';
 export default {
     data: () => ({
     loginForm: new Form({
-                email: '',
-                password: '',
+                email: 'user@gmail.com',
+                password: 'password',
  
             }),          
    }),
 
     methods: {
-        login() {
+       async login() {
             axios.get('/sanctum/csrf-cookie').then(response => {
                this.loginForm.post('/login').then(response=>{
-                    console.log("hello from login");
+                     this.getUserData();
+                    this.$router.push({name:'Dashboard'})
+                    this.$toast.success(`Log In Successful`);
                });
                 
             });
             
         },
-        getUserData(){
-            axios.get('api/user').then(response =>{
-                console.log(response);
+         getUserData(){
+             axios.get('api/user').then(response =>{
+             let user = response.data;
+             this.$store.commit('SET_USER', user);  
             });
         }
     },
     mounted () {
-        this.getUserData();
+        
     },
 
 }

@@ -9,6 +9,9 @@ import Product from "../pages/product/index.vue";
 import ProductCreate from "../pages/product/create.vue";
 import editProduct  from "../pages/product/edit.vue";
 
+//dashboard
+import Dashboard from "../pages/dashboard/index.vue";
+
 //authentication
 import LoginVue from "../pages/auth/Login.vue";
 
@@ -62,8 +65,13 @@ const router = createRouter({
         {
             path:'/auth/login',
             name:'LoginVue',
-            component:LoginVue,
-            
+            component:LoginVue,           
+        },
+        
+        {
+            path:'/dashboard',
+            name:'Dashboard',
+            component:Dashboard,     
         },
 
 
