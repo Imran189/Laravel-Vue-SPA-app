@@ -20,15 +20,16 @@
                  <li class="nav-item">
                 <router-link class="nav-link " aria-current="page" :to="{name:'Product'}">Product</router-link>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item" >
+                <router-link class="nav-link "  aria-current="page" :to="{name:'Dashboard'}">Dashboard</router-link>
+                </li>
+                <li class="nav-item" >
                 <router-link class="nav-link " aria-current="page" :to="{name:'LoginVue'}">Login</router-link>
                 </li>
                 <li class="nav-item">
                 <a class="nav-link" href="#" @click.prevent="logout">Logout</a>
                 </li>
-                <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
-                </li>
+                
                 
             </ul>
             
@@ -38,14 +39,25 @@
     </div>
 </template>
 <script>
+import { mapState, mapGetters} from "vuex"
+
 export default {
+    
     methods: {
        logout(){
            axios.post('/logout').then(response=>{
-               this.$toast.success(`Logout Is Successful`);           
+               this.$toast.success(`Logout Is Successful`);    
+               this.$router.push({name:'home'})       
            });
        }
     },
+   computed: {
+        
+       ...mapState(["authenticated"]),
+       ...mapGetters(["getAuthenticated"])
+        },
+   
+    
 }
 </script>
 <style>
