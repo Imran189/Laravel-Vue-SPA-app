@@ -3,13 +3,13 @@
         <div class="card">
             <div class="card-header">Dashboard</div>
             <div class="card-body">
-                <p>{{message}}, {{user}}</p>
+                <p>{{message}}, {{user.name}}</p>
             </div>
         </div>
     </div>
 </template>
 <script>
-import { mapState,mapGetters} from "vuex"
+import { mapState, mapGetters} from "vuex"
 export default {
     
     computed: {

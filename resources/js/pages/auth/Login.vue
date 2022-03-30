@@ -54,7 +54,7 @@ export default {
             
         },
          getUserData(){
-             axios.get('api/user').then(response =>{
+             axios.get('/api/user').then(response =>{
              let user = response.data;
              this.$store.commit('SET_USER', user);  
             });
