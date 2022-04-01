@@ -23066,7 +23066,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       });
     }
   },
-  computed: _objectSpread(_objectSpread({}, (0,vuex__WEBPACK_IMPORTED_MODULE_0__.mapState)(["authenticated"])), (0,vuex__WEBPACK_IMPORTED_MODULE_0__.mapGetters)(["getAuthenticated"]))
+  computed: _objectSpread(_objectSpread({}, (0,vuex__WEBPACK_IMPORTED_MODULE_0__.mapState)(["auth"])), (0,vuex__WEBPACK_IMPORTED_MODULE_0__.mapGetters)(["getAuthenticated"]))
 });
 
 /***/ }),
@@ -23186,6 +23186,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         var user = response.data;
 
         _this2.$store.commit('SET_USER', user);
+
+        _this2.$store.commit('SET_AUTHENTICATED', true);
       });
     }
   },
@@ -23716,6 +23718,7 @@ var _hoisted_13 = {
 var _hoisted_14 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Product");
 
 var _hoisted_15 = {
+  key: 0,
   "class": "nav-item"
 };
 
@@ -23797,7 +23800,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     _: 1
     /* STABLE */
 
-  })]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", _hoisted_15, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
+  })]), _ctx.auth ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("li", _hoisted_15, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
     "class": "nav-link",
     "aria-current": "page",
     to: {
@@ -23810,7 +23813,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     _: 1
     /* STABLE */
 
-  })]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", _hoisted_17, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
+  })])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", _hoisted_17, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
     "class": "nav-link",
     "aria-current": "page",
     to: {
@@ -25167,7 +25170,7 @@ var store = (0,vuex__WEBPACK_IMPORTED_MODULE_0__.createStore)({
     return {
       message: 'Welcome to Dashboard',
       user: {},
-      authenticated: false
+      auth: false
     };
   },
   getters: {
@@ -25175,11 +25178,10 @@ var store = (0,vuex__WEBPACK_IMPORTED_MODULE_0__.createStore)({
       return state.message;
     },
     getUser: function getUser(state) {
-      store.commit('SET_AUTHENTICATED', true);
       return state.user;
     },
     getAuthenticated: function getAuthenticated(state) {
-      return state.authenticated;
+      return state.auth;
     }
   },
   mutations: {
@@ -25187,7 +25189,7 @@ var store = (0,vuex__WEBPACK_IMPORTED_MODULE_0__.createStore)({
       state.user = data;
     },
     SET_AUTHENTICATED: function SET_AUTHENTICATED(state, data) {
-      state.authenticated = data;
+      state.auth = data;
     }
   }
 });

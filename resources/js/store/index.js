@@ -5,7 +5,7 @@ const store = createStore({
       return {
         message:'Welcome to Dashboard',
         user:{},
-        authenticated:false,
+        auth:false,
 
       }
     },
@@ -13,12 +13,11 @@ const store = createStore({
         getMessage(state){
             return state.message;
         },
-        getUser(state){
-            store.commit('SET_AUTHENTICATED', true);
+        getUser(state){ 
             return state.user;
         }, 
         getAuthenticated(state){           
-           return state.authenticated;
+           return state.auth;
         }
     },
     mutations: {
@@ -26,9 +25,9 @@ const store = createStore({
            state.user = data
        },
        SET_AUTHENTICATED(state,data){
-           state.authenticated = data;
+           state.auth = data;
        }
       },
   })
 
- export default store
+ export default  store

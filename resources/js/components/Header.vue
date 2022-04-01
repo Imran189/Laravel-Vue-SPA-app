@@ -20,7 +20,7 @@
                  <li class="nav-item">
                 <router-link class="nav-link " aria-current="page" :to="{name:'Product'}">Product</router-link>
                 </li>
-                <li class="nav-item" >
+                <li class="nav-item" v-if="auth">
                 <router-link class="nav-link "  aria-current="page" :to="{name:'Dashboard'}">Dashboard</router-link>
                 </li>
                 <li class="nav-item" >
@@ -53,7 +53,7 @@ export default {
     },
    computed: {
         
-       ...mapState(["authenticated"]),
+       ...mapState(["auth"]),
        ...mapGetters(["getAuthenticated"])
         },
    
