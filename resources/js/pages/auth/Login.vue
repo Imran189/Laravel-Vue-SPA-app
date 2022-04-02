@@ -32,6 +32,8 @@
 
 <script>
 import Form from 'vform';
+import { useStore } from "vuex";
+
 export default {
     data: () => ({
     loginForm: new Form({
