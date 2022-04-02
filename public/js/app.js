@@ -23719,6 +23719,7 @@ var _hoisted_13 = {
 var _hoisted_14 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Product");
 
 var _hoisted_15 = {
+  key: 0,
   "class": "nav-item"
 };
 
@@ -23800,7 +23801,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     _: 1
     /* STABLE */
 
-  })]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", _hoisted_15, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
+  })]), _ctx.auth ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("li", _hoisted_15, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
     "class": "nav-link",
     "aria-current": "page",
     to: {
@@ -23813,7 +23814,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     _: 1
     /* STABLE */
 
-  })]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", _hoisted_17, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
+  })])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", _hoisted_17, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
     "class": "nav-link",
     "aria-current": "page",
     to: {
@@ -25039,7 +25040,7 @@ var toasterConfig = {
   dismissible: true
 };
 (0,vue__WEBPACK_IMPORTED_MODULE_0__.createApp)(_components_App_vue__WEBPACK_IMPORTED_MODULE_2__["default"]).use(_incuca_vue3_toaster__WEBPACK_IMPORTED_MODULE_1__["default"], toasterConfig).use(_store_index_js__WEBPACK_IMPORTED_MODULE_5__["default"]).use(_router__WEBPACK_IMPORTED_MODULE_4__["default"]).mount("#app");
-(0,vue__WEBPACK_IMPORTED_MODULE_0__.createApp)(_components_Header_vue__WEBPACK_IMPORTED_MODULE_3__["default"]).use(_incuca_vue3_toaster__WEBPACK_IMPORTED_MODULE_1__["default"], toasterConfig).use(_router__WEBPACK_IMPORTED_MODULE_4__["default"]).mount("#header"); // const app = new Vue({
+(0,vue__WEBPACK_IMPORTED_MODULE_0__.createApp)(_components_Header_vue__WEBPACK_IMPORTED_MODULE_3__["default"]).use(_incuca_vue3_toaster__WEBPACK_IMPORTED_MODULE_1__["default"], toasterConfig).use(_store_index_js__WEBPACK_IMPORTED_MODULE_5__["default"]).use(_router__WEBPACK_IMPORTED_MODULE_4__["default"]).mount("#header"); // const app = new Vue({
 //     el: '#app',
 // });
 

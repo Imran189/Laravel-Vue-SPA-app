@@ -17,7 +17,7 @@ var toasterConfig={
 }
 
 createApp(App).use(Toaster,toasterConfig).use(store).use(router).mount("#app");
-createApp(Header).use(Toaster,toasterConfig).use(router).mount("#header");
+createApp(Header).use(Toaster,toasterConfig).use(store).use(router).mount("#header");
 
 
  
