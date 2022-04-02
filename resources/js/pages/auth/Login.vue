@@ -61,6 +61,7 @@ export default {
              this.$store.commit('SET_USER', user);  
              this.$store.commit('SET_AUTHENTICATED', true); 
              
+             localStorage.setItem("auth", true);
             });
         }
     },

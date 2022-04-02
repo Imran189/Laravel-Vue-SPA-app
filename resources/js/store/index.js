@@ -1,5 +1,5 @@
 import { createStore } from 'vuex'
-
+import router from '../router'
 const store = createStore({
     state () {
       return {
@@ -28,6 +28,28 @@ const store = createStore({
            state.auth = data;
        }
       },
+      actions:{
+        authUser ({ commit, dispatch }) {
+            return axios.get('/api/user').then((response) => {
+                commit('SET_AUTHENTICATED', true)
+                commit('SET_USER', response.data)
+                localStorage.setItem("auth", true);
+                
+                if(router.currentRoute.name !== null){
+                    router.push({ name: 'Dashboard' })
+                };
+
+            }).catch(() => {
+                commit('SET_AUTHENTICATED', false)
+                commit('SET_USER', null)
+                localStorage.removeItem("auth");
+
+                if(router.currentRoute.name !== 'login'){
+                    router.push({ name: 'login' })
+                };
+            })
+        },
+      }
   })
 
  export default  store

@@ -23,7 +23,7 @@
                 <li class="nav-item" v-if="auth">
                 <router-link class="nav-link "  aria-current="page" :to="{name:'Dashboard'}">Dashboard</router-link>
                 </li>
-                <li class="nav-item" >
+                <li class="nav-item" v-if="!auth">
                 <router-link class="nav-link " aria-current="page" :to="{name:'LoginVue'}">Login</router-link>
                 </li>
                 <li class="nav-item">
