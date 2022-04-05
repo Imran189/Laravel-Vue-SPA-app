@@ -14,7 +14,7 @@
             </div>
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header">Dashboard-9</div>
+                    <div class="card-header">Dashboard-10</div>
                     <div class="card-body">
                       <p>{{message}}, {{user.name}}</p>
                  </div>
