@@ -45,7 +45,7 @@ const store = createStore({
                 localStorage.removeItem("auth");
 
                 if(router.currentRoute.name !== 'login'){
-                    router.push({ name: 'login' })
+                    router.push({ name: 'LoginVue' })
                 };
             })
         },

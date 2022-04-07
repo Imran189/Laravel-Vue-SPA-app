@@ -19,14 +19,13 @@ let auth = localStorage.getItem("auth");
 
 if(auth){
     store.dispatch('authUser').then(()=>{
-        createApp(App).use(Toaster,toasterConfig).use(store).use(router).mount("#app");
         createApp(Header).use(Toaster,toasterConfig).use(store).use(router).mount("#header");
 
     });
 }else{
-    createApp(App).use(Toaster,toasterConfig).use(store).use(router).mount("#app");
     createApp(Header).use(Toaster,toasterConfig).use(store).use(router).mount("#header");
 }
+createApp(App).use(Toaster,toasterConfig).use(store).use(router).mount("#app");
 
 
 
