@@ -46,7 +46,9 @@ export default {
     methods: {
        logout(){
            axios.post('/logout').then(response=>{
-               this.$toast.success(`Logout Is Successful`);    
+               this.$toast.success(`Logout Is Successful`); 
+               localStorage.removeItem("auth");
+               this.$store.commit('SET_AUTHENTICATED', false); 
                this.$router.push({name:'home'})       
            });
        }
